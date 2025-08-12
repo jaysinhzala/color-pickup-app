@@ -1,0 +1,84 @@
+/* ===== Container Styling ===== */
+.color-picker-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  
+    /* Glassmorphism background */
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+  }
+  
+  /* ===== Heading (Glass Effect) ===== */
+  .color-picker-container h1 {
+    font-size: 2.5rem;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+  
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ===== Display Box ===== */
+  .color-picker-display {
+    width: 300px;
+    height: 150px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ===== Label & Input ===== */
+  label {
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+  }
+  
+  /* Remove default border in some browsers */
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 8px;
+    border: none;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .color-picker-display {
+      width: 90%;
+      height: 120px;
+    }
+    
+    .color-picker-container h1 {
+      font-size: 2rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
+  
