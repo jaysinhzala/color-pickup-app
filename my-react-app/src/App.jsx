@@ -3,10 +3,10 @@
 //import Food from './Food.jsx';
 //import Card from './Card.jsx';
 //import Student from './Student.jsx';
-import ToDoList from './toDoList.jsx';
+import MyComponent from './MyComponent.jsx';
 
 function App() {
-  return(<ToDoList />);
+  return(<MyComponent />);
 }
 
 export default App
