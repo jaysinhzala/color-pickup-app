@@ -1,27 +1,113 @@
-
-.counter-container{
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 300px;
-  width: 500px;
-  background-color: bisque;
-  margin-left: 25%;
-  padding-top: 5%;
+/* Flip Card Container */
+.to-do-list {
+  width: 400px;
+  height: 350px;
+  perspective: 1000px;
+  margin: auto;
+  position: relative;
 }
 
-.counter-disply{
-  font-size: 30px;
+/* Inner wrapper for flipping */
+.to-do-list-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
 }
 
-.counterBtn{
-  font-size: 18px;
-  width: 150px;
-  height: 50px;
-  border-radius: 50px;
-  margin-right: 2px;
+/* Flip on hover */
+.to-do-list:hover .to-do-list-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front (Heading Side) */
+.to-do-list h1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4b6cb7, #182848); /* dark gradient */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+}
+
+/* Back (Task List UI) */
+.to-do-list-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* soft light gradient */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Input field */
+.to-do-list-back input {
+  width: 70%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid #4b6cb7;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  color: #182848;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.to-do-list-back button {
+  padding: 0.5rem 0.8rem;
+  margin-left: 0.3rem;
+  margin-top: 0.2rem;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  background: #4b6cb7;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.counterBtn:hover{
-  background-color: rgb(229, 223, 223);
+.to-do-list-back button:hover {
+  background: #6a82fb;
+  transform: scale(1.05);
+}
+
+/* Task list */
+.to-do-list-back ol {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  text-align: left;
+  color: #182848;
+}
+
+.to-do-list-back li {
+  margin: 0.5rem 0;
+  list-style: decimal;
+  background: rgba(75, 108, 183, 0.15);
+  padding: 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between; /* buttons appear next to task */
+  align-items: center;
 }
