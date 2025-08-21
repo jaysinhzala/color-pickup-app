@@ -3,10 +3,13 @@
 //import Food from './Food.jsx';
 //import Card from './Card.jsx';
 //import Student from './Student.jsx';
-import DigitalClock from './DigitalClock.jsx';
+import MyComponent from './MyComponent.jsx';
+
 
 function App() {
-  return(<DigitalClock />);
+  return(<>
+          <MyComponent />
+          </>);
 }
 
 export default App

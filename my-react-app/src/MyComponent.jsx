@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, createContext } from "react";
+import MyComponentB from './MyComponentB.jsx';
+
+export const UserContext = createContext();
 
 function MyComponent() {
-
-    const [width, setWidth] = useState(window.innerWidth);
-    const [hight, setHight] = useState(window.innerHeight);
-
-    useEffect(()=> {
-        window.addEventListener("resize",resizeWindow);
-        console.log('Event listener Added');
-    },[]);
-
-    function resizeWindow(){
-        setWidth(window.innerWidth);
-        setHight(window.innerHeight);
-    }
+    const [user, setUser] = useState("Jay");
     
-    return (<>
-        <h1>Measure Window Hight and Width</h1>
-        <p>Window Height: {hight}px</p>
-        <p>Window Width: {width}px</p>
-    </>);
+    return (
+        <div className="box">
+            <h1>Component A</h1>
+            <h2>{`Hello ${user}`}</h2>
+            <UserContext.Provider value={user}>
+                 <MyComponentB user={user}/>
+            </UserContext.Provider>
+        </div>
+        );
 }
 
 export default MyComponent;

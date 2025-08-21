@@ -1,24 +1,4 @@
-.clock-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;              /* Full screen */
-  background: linear-gradient(135deg, #2b1055, #7597de); /* Gradient background */
-}
-
-.clock {
-  background: rgba(255, 255, 255, 0.1); /* glassy effect */
-  padding: 40px 80px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.clock span {
-  font-family: "Orbitron", sans-serif;  /* futuristic font */
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 0 0 10px #a855f7, 0 0 20px #9333ea, 0 0 40px #6b21a8;
-  letter-spacing: 5px;
+.box{
+  border: 3px solid;
+  padding: 25px;
 }
